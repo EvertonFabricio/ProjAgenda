@@ -17,16 +17,92 @@ namespace Agenda
             Tail = null;
         }
 
-        public bool empty()
+        public void insert(Contato novo)
         {
-            if (Head == null)
-                return true;
+            if (empty())
+            {
+                Head = Tail = novo;
+                
+                Console.WriteLine("Contato inserido com sucesso!");
+            }
             else
-                return false;
+            {
+
+                ordenar(novo);
+
+                Console.WriteLine("Contato inserido com sucesso!");
+            }
+
         }
+
+        public void ordenar(Contato aux)
+        {
+            Contato aux1 = Head, aux2 = Head;
+
+            StringComparer comparer = StringComparer.CurrentCultureIgnoreCase;
+
+            do
+            {
+                if (comparer.Compare(aux.Nome, Head.Nome) <= 0)
+                {
+                    aux.Next = Head;
+                    Head = aux;
+                    aux1 = null;
+                }
+                else if (comparer.Compare(aux.Nome, Tail.Nome) >= 0)
+                {
+                    Tail.Next = aux;
+                    Tail = aux;
+                    aux1 = null;
+                }
+                else
+                {
+                    if (comparer.Compare(aux1.Nome, aux.Nome) <= 0)
+                    {
+                        if (aux1 == aux2)
+                        {
+                            if (aux1 == aux2)
+                            {
+                                aux1 = aux1.Next;
+                            }
+                            else
+                            {
+                                aux2 = aux1;
+                                aux1 = aux1.Next;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        aux.Next = aux1;
+                        aux2.Next = aux;
+                        aux1 = null;
+                    }
+                }
+            } while (aux1 != null);
+
+            aux1 = null;
+            aux2 = null;
+
+            /*for (Contato aux = Head; aux != null; aux = aux.Next)
+            {
+                for (Contato aux2 = aux.Next; aux2 != null; aux2 = aux2.Next)
+                {
+                    if (string.Compare(aux.Nome, aux2.Nome) > 0)
+                    {
+                        aux.Next = aux2.Next;
+                        aux.Prev = aux2;
+                        aux2.Prev = aux.Prev;
+                        aux2.Next = aux;
+                    }
+                }
+            }*/
+        }
+
         public void print()
         {
             Contato aux = Head;
+
             do
             {
                 Console.WriteLine(aux.ToString());
@@ -34,58 +110,14 @@ namespace Agenda
 
             } while (aux != null);
         }
-        public void insert(Contato novo)
+
+        public bool empty()
         {
-            if (empty())
-            {
-                Head = novo;
-                Tail = novo;
-                Console.WriteLine("Contato inserido com sucesso!");
-            }
+            if ((Head == null) && (Tail == null))
+                return true;
             else
-            {
-                novo.Prev = Tail;
-                Tail.Next = novo;
-                Tail = novo;
-                Console.WriteLine("Contato inserido com sucesso!");
-            }
-
+                return false;
         }
-        public void ordenar()
-        {
-            if (empty())
-                Console.WriteLine("Não existem contatos para ser ordenado.");
-            else
-            {
-                for (Contato aux = Head; aux != null; aux = aux.Next)
-                {
-                    for (Contato aux2 = aux.Next; aux2 != null; aux2 = aux2.Next)
-                    {
-                        if (string.Compare(aux.Nome, aux2.Nome) > 0)
-                        {
-                            aux.Next = aux2.Next;
-                            aux.Prev = aux2;
-                            aux2.Prev = aux.Prev;
-                            aux2.Next = aux;
-                        }
-                    }
-                }
 
-
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-        }
     }
 }

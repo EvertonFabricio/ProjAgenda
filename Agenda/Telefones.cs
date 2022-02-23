@@ -14,10 +14,10 @@ namespace Agenda
         public Telefones Next { get; set; }
         public Telefones Prev { get; set; }
 
-        public Telefones(string tipo, string dDD, string numero)
+        public Telefones(string tipo, string ddd, string numero)
         {
             Tipo = tipo;
-            DDD = dDD;
+            DDD = ddd;
             Numero = numero;
             Next = null;
             Prev = null;

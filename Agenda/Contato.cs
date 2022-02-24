@@ -11,7 +11,6 @@ namespace Agenda
         public string Nome { get; set; }
         public string Email { get; set; }
         public Contato Next { get; set; }
-        public Contato Prev { get; set; }
         public Telefones Telefone { get; set; }
 
         public Contato(string nome, string email, Telefones telefone)
@@ -19,7 +18,6 @@ namespace Agenda
             Nome = nome;
             Email = email;
             Next = null;
-            Prev = null;
             Telefone = telefone;
         }
 

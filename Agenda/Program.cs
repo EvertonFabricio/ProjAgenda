@@ -17,18 +17,19 @@ namespace Agenda
                 switch (menu)
                 {
                     case "1":
-                        lista.insert(new Contato("Everton", "", new Telefones("", "", "")));
-                        lista.insert(new Contato("Roberta", "", new Telefones("", "", "")));
-                        lista.insert(new Contato("Fabricio", "", new Telefones("", "", "")));
-                        lista.insert(new Contato("Ana", "", new Telefones("", "", "")));
-                        lista.insert(new Contato("Zebra", "", new Telefones("", "", "")));
+                        lista.insert(new Contato("Everton", "e@e", new Telefones("1", "1", "1")));
+                        lista.insert(new Contato("Roberta", "r@r", new Telefones("2", "2", "2")));
+                        lista.insert(new Contato("Fabricio", "f@f", new Telefones("3", "3", "3")));
+                        lista.insert(new Contato("Ana", "a@a", new Telefones("4", "4", "4")));
+                        lista.insert(new Contato("Zebra", "z@z", new Telefones("5", "5", "5")));
+                        lista.insert(new Contato("Barbara", "z@z", new Telefones("5", "5", "5")));
 
                         Console.WriteLine("\n\n");
-
                         lista.print();
-                        Console.WriteLine("\n******************************************\n");
-                        lista.ordenar();
-                        lista.print();
+                        //Console.ReadKey();
+                        //lista.ordenar();
+                        //Console.WriteLine("\n******************************************\n");
+                       // lista.print();
 
                         //Console.WriteLine("Digite o nome do contato: ");
                         //string nome = Console.ReadLine();
@@ -43,6 +44,7 @@ namespace Agenda
                         //string tipo = Console.ReadLine();
                         //Telefones t1 = new Telefones("ddd", "tel", "tipo");
                         //lista.insert(new Contato(nome, email, t1));
+                        //lista.ordenar();
                         //Console.Clear();
                         break;
 

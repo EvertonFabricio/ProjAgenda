@@ -12,7 +12,6 @@ namespace Agenda
         public string DDD { get; set; }
         public string Numero { get; set; }
         public Telefones Next { get; set; }
-        public Telefones Prev { get; set; }
 
         public Telefones(string tipo, string dDD, string numero)
         {
@@ -20,10 +19,10 @@ namespace Agenda
             DDD = dDD;
             Numero = numero;
             Next = null;
-            Prev = null;
         }
         public override string ToString()
         {
+
             return $"{Tipo}: ({DDD}) {Numero}.";
         }
 

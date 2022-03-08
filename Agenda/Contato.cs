@@ -23,7 +23,8 @@ namespace Agenda
 
         public override string ToString()
         {
-            return $"Informações do Contato:\nContato: {Nome}\ne-mail: {Email}\nTelefone: {Telefone.ToString()}\n";  
+            
+            return $"Informações do Contato:\nContato: {Nome}\ne-mail: {Email}\nTelefone {Telefone.ToString()}\n";  
 
         }
     }

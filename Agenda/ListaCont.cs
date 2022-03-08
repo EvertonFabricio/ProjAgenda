@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Agenda
 {
-    internal class Lista
+    internal class ListaCont
     {
         public Contato Head { get; set; }
         public Contato Tail { get; set; }
 
-        public Lista()
+        public ListaCont()
         {
             Head = null;
             Tail = null;
         }
 
-        public bool empty()
+        public bool Empt()
         {
             if (Head == null && Tail == null)
                 return true;
             else
                 return false;
         }
-        public void print()
+        public void Print()
         {
-            if (empty())
+            if (Empt())
             {
                 Console.WriteLine("Não existem contatos para serem exibidos. Pressione ENTER para continuar...");
                 Console.ReadKey();
@@ -48,9 +48,9 @@ namespace Agenda
                 Console.Clear();
             }
         }
-        public void insert(Contato novo)
+        public void Insert(Contato novo)
         {
-            if (empty())
+            if (Empt())
             {
                 Head = novo;
                 Tail = novo;
@@ -98,46 +98,5 @@ namespace Agenda
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-        //public void ordenar()
-        //{
-        //    if (empty())
-        //        Console.WriteLine("Não existem contatos para ser ordenado.");
-        //    else
-        //    {
-        //        for (Contato sort1 = Head; sort1 != null; sort1 = sort1.Next)
-        //        {
-        //            for (Contato sort2 = sort1.Next; sort2 != null; sort2 = sort2.Next)
-        //            {
-        //                if (string.Compare(sort1.Nome, sort2.Nome) > 0)
-        //                {
-        //                    string nome, email;
-        //                    Telefones telefone;
-
-        //                    nome = sort1.Nome;
-        //                    email = sort1.Email;
-        //                    telefone = sort1.Telefone;
-
-        //                    sort1.Nome = sort2.Nome;
-        //                    sort1.Email = sort2.Email;
-        //                    sort1.Telefone = sort2.Telefone;
-
-        //                    sort2.Nome = nome;
-        //                    sort2.Email = email;
-        //                    sort2.Telefone = telefone;
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
